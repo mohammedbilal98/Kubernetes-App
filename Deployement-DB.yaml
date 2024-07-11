@@ -19,3 +19,11 @@ spec:
         image: mohammedbilal98/vprofiledb
         ports:
         - containerPort: 3306
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom: 
+            secretkeyRef:
+              name: app-secret
+              key: db-pass
+    
+    
